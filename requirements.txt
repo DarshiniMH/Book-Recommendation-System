@@ -1,0 +1,15 @@
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+nltk
+streamlit
+sentence-transformers
+faiss-cpu
+hdbscan
+scikit-learn
+fasttext
+rank_bm25
+whoosh
+fasstext
