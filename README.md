@@ -9,6 +9,7 @@ This project presents an **advanced** book recommendation system. While simple a
 Critically, while readily available "similar books" data (often based on human curation or simple heuristics) offers valuable suggestions, it's inherently limited—it can't provide recommendations for every book, especially brand new additions or those lacking pre-existing explicit connections. My system tackles these fundamental challenges head-on, delivering comprehensive, semantically rich, and genre-aligned recommendations for every single book in my collection, seamlessly handling novel items and ensuring the system's future adaptability.
 
 ---
+
 ## Key Features
 
 My Recommendation System offers a seamless and insightful experience:
@@ -19,49 +20,6 @@ My Recommendation System offers a seamless and insightful experience:
 * **Comprehensive Coverage:** Provides recommendations for all 149,000 books in the dataset, ensuring no reader is left without a suggestion, even if explicit "similar books" data is missing.
 * **Transparent Source Attribution:** Each recommendation clearly indicates which model(s) contributed to its selection, demystifying the "why."
 * **User-Friendly Web Application:** Showcased through an interactive Streamlit application.
-
----
-## Getting Started
-
-Follow these instructions to set up the project environment and run the application.
-
-### Installation
-
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/DarshiniMH/Book-Recommendation-System.git]
-    cd Book-Recommendation-System
-    ```
-
-2.  **Install the required dependencies:**
-    It is recommended to create a virtual environment first.
-    ```bash
-    pip install -r requirements.txt
-    ```
-    *(Note: If you don't have a `requirements.txt` file, you can create one by running `pip freeze > requirements.txt` in your project's activated virtual environment.)*
-
-### Data Setup
-
-The dataset files (`.pkl`, `.parquet`, etc.) for this project are too large to be stored on GitHub. They are hosted on Google Drive.
-
-1.  **Download the data files from this link:**
-    
-    [Download Project Data from Google Drive](https://drive.google.com/drive/folders/1OMvP0IwxAF4cgVmrMD6irew1nFYirmWQ?usp=sharing
-)
-
-2.  **Create a `data` directory** in the root of your project folder if it doesn't already exist.
-
-3.  **Place all the downloaded data files** inside the newly created `data/` directory. Your project structure should look like this:
-
-    ```
-    ├── data/
-    │   ├── .pkl
-    │   ├── .parquet
-    │   └── ...
-    ├── book-recommendation-system.py
-    ├── requirements.txt
-    └── README.md
-    ```
 
 ---
 
