@@ -22,6 +22,87 @@ My Recommendation System offers a seamless and insightful experience:
 * **User-Friendly Web Application:** Showcased through an interactive Streamlit application.
 
 ---
+## Getting Started
+
+Follow these instructions to set up the project environment, prepare the data, and run the application.
+
+### Prerequisites
+
+* **Python 3.8+** (recommended)
+
+### Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/DarshiniMH/Book-Recommendation-System.git]
+    cd Book-Recommendation-System
+    ```
+2.  **Create a virtual environment** (recommended for dependency management):
+    ```bash
+    python -m venv venv
+    # On Windows:
+    # .\venv\Scripts\activate
+    # On macOS/Linux:
+    # source venv/bin/activate
+    ```
+3.  **Install the required dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+    *(**Note:** `faiss-gpu` installation can be complex. Refer to its official documentation for specific CUDA compatibility and troubleshooting. If issues persist, consider `faiss-cpu` for CPU-only operation.)*
+
+### Data Setup & Preprocessing
+
+The raw dataset (approx. 8GB JSON) and the subsequent processed/indexed files (`.pkl`, `.parquet`, SQLite `.db`, Whoosh index folders) are too large to be stored directly on GitHub. You will need to either download the final preprocessed assets or run the preprocessing script yourself.
+
+#### Option 1: Download Preprocessed Data (Recommended for quick setup)
+
+This is the fastest way to get the app running, as it bypasses the need to run the full preprocessing pipeline.
+
+1.  **Download all preprocessed data assets** from the following Google Drive link:
+    [** Download Processed Project Data from Google Drive **](https://drive.google.com/drive/folders/1OMvP0IwxAF4cgVmrMD6irew1nFYirmWQ?usp=drive_link)
+
+
+2.  **Create a `data` directory** in the root of your project folder if it doesn't already exist.
+    ```bash
+    mkdir data
+    ```
+3.  **Place all the downloaded preprocessed data files and folders** (`.parquet`, `.pkl`, `.db`, `whoosh_title_index/`) inside the `data/` directory. Your project structure should look like this:
+    ```
+    your-repository-name/
+    ├── data/
+    │   ├── books_dataframe.parquet
+    │   ├── computed_neighbors_avg_rating_description_v1.pkl
+    │   ├── computed_neighbors_popular_shelf.pkl
+    │   └── neighbors_similar_book_v1.pkl
+    ├── app.py
+    ├── requirements.txt
+    └── README.md
+    ```
+
+#### Option 2: Run Local Data Preprocessing (For full pipeline demonstration)
+
+This option allows you to run the entire data pipeline from the raw JSON file to generate all necessary assets locally.
+
+1.  **Obtain the raw dataset:**
+    * Navigate to the [UCSD Goodreads Dataset](https://cseweb.ucsd.edu/~jmcauley/datasets/goodreads.html).
+    * Look for the link named "**Detailed book graph (~2gb, about 2.3m books): `goodreads_books.json.gz`**" and download this file.
+    * Create a `data/` directory in the root of your project folder if it doesn't already exist:
+        ```bash
+        mkdir -p data
+        ```
+    * Place the downloaded `goodreads_books.json.gz` file into the `data/` directory.
+
+2.  **Execute the preprocessing script:**
+    * Run dedicated data preprocessing script (e.g., 01-data-preprocessing-and-model-creation.ipynb) which orchestrates all steps from raw JSON to the final `.pkl`, `.npy`, `.db`, and Whoosh index files.
+    * *(**Note:** This script will take significant time and computational resources, especially for embedding generation and index building, and requires the necessary Python packages and potentially GPU/TPU access.)*
+
+3.  **Verify Data Structure:**
+    After running the script, your project structure should match the one described in Option 1, containing all the generated files within the `data/` directory.
+
+
+---
+
 
 ## Technical Architecture & Implementation
 
