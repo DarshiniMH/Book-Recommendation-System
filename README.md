@@ -22,6 +22,15 @@ My Recommendation System offers a seamless and insightful experience:
 * **User-Friendly Web Application:** Showcased through an interactive Streamlit application.
 
 ---
+
+## Application Demonstration
+
+Here's a quick look at the interactive Streamlit application:
+
+![Book Recommendation App Demo](images/book_recommendation_demo.gif)
+
+---
+
 ## Getting Started
 
 Follow these instructions to set up the project environment, prepare the data, and run the application.
@@ -59,7 +68,7 @@ The raw dataset (approx. 8GB JSON) and the subsequent processed/indexed files (`
 
 This is the fastest way to get the app running, as it bypasses the need to run the full preprocessing pipeline.
 
-1.  **Download all preprocessed data assets** from the following Google Drive link:
+1.  **Download preprocessed database file** (`hybrid_recommendations.db`)from the following Google Drive link:
     [** Download Processed Project Data from Google Drive **](https://drive.google.com/drive/folders/1OMvP0IwxAF4cgVmrMD6irew1nFYirmWQ?usp=drive_link)
 
 
@@ -67,15 +76,12 @@ This is the fastest way to get the app running, as it bypasses the need to run t
     ```bash
     mkdir data
     ```
-3.  **Place all the downloaded preprocessed data files and folders** (`.parquet`, `.pkl`, `.db`, `whoosh_title_index/`) inside the `data/` directory. Your project structure should look like this:
+3.  **Place the downloaded `hybrid_recommendations_db.db` file** inside the `data/` directory. Your project structure should look like this:
     ```
     your-repository-name/
     ├── data/
-    │   ├── books_dataframe.parquet
-    │   ├── computed_neighbors_avg_rating_description_v1.pkl
-    │   ├── computed_neighbors_popular_shelf.pkl
-    │   └── neighbors_similar_book_v1.pkl
-    ├── app.py
+    │   └── hybrid_recommendations_db.db  # Your final SQLite DB
+    ├── streamlit_app.py                # Your Streamlit app file
     ├── requirements.txt
     └── README.md
     ```
@@ -100,7 +106,22 @@ This option allows you to run the entire data pipeline from the raw JSON file to
 3.  **Verify Data Structure:**
     After running the script, your project structure should match the one described in Option 1, containing all the generated files within the `data/` directory.
 
+### Running the Application
 
+Once the data setup (either Option 1 or Option 2) is complete:
+
+1.  **Activate your virtual environment:**
+    ```bash
+    # On Windows:
+    # .\venv\Scripts\activate
+    # On macOS/Linux:
+    # source venv/bin/activate
+    ```
+2.  **Start the Streamlit app:**
+    ```bash
+    streamlit run streamlit_app.py
+    ```
+    This command will open the application in your web browser.
 ---
 
 
