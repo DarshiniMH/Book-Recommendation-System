@@ -80,7 +80,7 @@ This is the fastest way to get the app running, as it bypasses the need to run t
     ```
     your-repository-name/
     ├── data/
-    │   └── hybrid_recommendations_db.db  # Your final SQLite DB
+    │   └── hybrid_recommendations.db  # Your final SQLite DB
     ├── streamlit_app.py                # Your Streamlit app file
     ├── requirements.txt
     └── README.md
